@@ -4,7 +4,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center space-x-8 mb-8">
+          { <div className="flex justify-center space-x-8 mb-8 bg-secondary p-12 rounded-4xl border-2">
             <img 
               src="/assets/eesa-logo.png" 
               alt="EESA Logo" 
@@ -15,7 +15,8 @@ const Home = () => {
               alt="College Logo"
               className="w-32 h-32 md:w-40 md:h-40 object-contain" 
             />
-          </div>
+          </div> }
+          
           
           <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">
             EESA Committee

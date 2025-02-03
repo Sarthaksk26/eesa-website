@@ -2,9 +2,9 @@
 
 :root {
   /* Light theme defaults */
-  --primary: #F8FAFC;
-  --secondary: #E2E8F0;
-  --accent: #3B82F6;
+  --primary: #FEFBD8;
+  --secondary: #a5c2ca;
+  --accent: #EECEB9;
   --text-primary: #1E293B;
   --text-secondary: #64748B;
 }
@@ -31,3 +31,4 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
