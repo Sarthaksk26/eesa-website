@@ -13,10 +13,10 @@ const Footer = () => {
                 <Mail size={16} className="mr-2" />
                 eesagcek2025@gmail.com
               </a>
-              <p className="flex items-center">
-                <Phone size={16} className="mr-2" />
-                +91 9766926060
-              </p>
+              <a href="tel:+919766926060" className="flex items-center hover:text-accent">
+              <Phone size={16} className="mr-2" />
+              +91 9766926060
+              </a>
             </div>
           </div>
 
