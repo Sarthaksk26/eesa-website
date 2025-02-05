@@ -32,7 +32,7 @@ const committeeMembers = [
     name: "Samarth Shenavi",
     position: "President",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    image: "https://photos.google.com/album/AF1QipP2SsuA8eHWRB52BqJIMgYbP2nkW5IenkE78ihz/photo/AF1QipPI2eTCzZkucjaXcTf12pU3fGQdOuYjiW-rNuPh"
   },
   {
     name: "Ishwari Jamale",
