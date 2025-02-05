@@ -29,57 +29,57 @@ const CommitteeMembers = () => {
 
 const committeeMembers = [
   {
-    name: "Rahul Sharma",
+    name: "Samarth Shenavi",
     position: "President",
-    department: "Final Year Electrical",
+    department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
   },
   {
-    name: "Priya Patel",
+    name: "Ishwari Jamale",
     position: "Vice President",
-    department: "Final Year Electrical",
+    department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
   },
   {
-    name: "Amit Kumar",
+    name: "Gauri Dange",
     position: "Secretary",
     department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
   },
   {
-    name: "Neha Singh",
-    position: "Joint Secretary",
+    name: "Swapnil Teli",
+    position: "Finance Head",
     department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
   },
   {
-    name: "Aditya Verma",
-    position: "Treasurer",
-    department: "Final Year Electrical",
+    name: "Aryan Bingi",
+    position: "IIIE Student Chapter Head",
+    department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
   },
   {
-    name: "Kavya Reddy",
+    name: "Prasad Munawali",
     position: "Technical Head",
     department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2"
   },
   {
-    name: "Ravi Desai",
-    position: "Cultural Secretary",
-    department: "Second Year Electrical",
+    name: "Shreyas Patil",
+    position: "Event Head(Extra-Curriculam)",
+    department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1463453091185-61582044d556"
   },
   {
-    name: "Ananya Shah",
-    position: "PR Head",
-    department: "Second Year Electrical",
+    name: "Prathamesh Kulkarni",
+    position: "Event Head(Sports)",
+    department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1557555187-23d685287bc3"
   },
   {
-    name: "Rohan Mehta",
-    position: "Sports Secretary",
-    department: "Second Year Electrical",
+    name: "Sayali Jadhav",
+    position: "Publicity Head",
+    department: "Third Year Electrical",
     image: "https://images.unsplash.com/photo-1500048993953-d23a436266cf"
   }
 ];
