@@ -9,13 +9,13 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <div className="space-y-2">
-              <a href="mailto:eesagcoek@gmail.com" className="flex items-center hover:text-accent">
+              <a href="mailto:eesagcek2025@gmail.com" className="flex items-center hover:text-accent">
                 <Mail size={16} className="mr-2" />
-                eesagcoek@gmail.com
+                eesagcek2025@gmail.com
               </a>
               <p className="flex items-center">
                 <Phone size={16} className="mr-2" />
-                +91 XXXXXXXXXX
+                +91 9766926060
               </p>
             </div>
           </div>
