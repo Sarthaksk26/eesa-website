@@ -29,8 +29,8 @@ const ContactUs = () => {
               <div>
                 <h3 className="font-semibold text-primary mb-2">Phone</h3>
                 <p className="text-secondary">
-                  President: +91 98765 43210<br />
-                  Secretary: +91 98765 43211
+                  President: +91 97669 26060<br />
+                  Secretary: +91 89994 70941
                 </p>
               </div>
             </div>

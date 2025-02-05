@@ -24,11 +24,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.instagram.com/eesa_gcek?igsh=OHJ4aW90MXBjdDZk" target="_blank" rel="noopener noreferrer" 
                  className="hover:text-accent">
                 <Instagram size={24} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/in/eesa-gcek-35a878349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"
                  className="hover:text-accent">
                 <Linkedin size={24} />
               </a>
