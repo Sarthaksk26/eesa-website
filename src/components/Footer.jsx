@@ -36,11 +36,11 @@ const Footer = () => {
           </div>
 
           {/* Address */}
-          <div className="text-lg font-semibold mb-4">Location</div>
+          <div className="text-lg font-semibold mb-4">Location
           <a href="https://www.google.co.in/maps/place/Government+College+of+Engineering,+Karad/@17.3095557,74.1823467,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc1826400000001:0x34bdd98ca25093e3!8m2!3d17.3095558!4d74.1872176!16s%2Fm%2F02pwjk8?entry=ttu&g_ep=EgoyMDI1MDIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="hover:text-accent">
           <p>EESA Library,<br />Government College of Engineering,<br />Karad, Maharashtra</p>
           </a>
-
+          </div>
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
