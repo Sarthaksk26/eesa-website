@@ -56,7 +56,7 @@ const committeeMembers = [
     name: "Aryan Bingi",
     position: "IIIE Student Chapter Head",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+    image: "/assets/aryan.jpg"
   },
   {
     name: "Prasad Munawali",
