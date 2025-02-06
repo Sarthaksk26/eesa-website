@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import './navbar.css'; // Import the CSS file
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,12 +53,12 @@ const NavLinks = ({ mobile }) => {
     { to: '/about', text: 'About' },
     { to: '/committee', text: 'Committee' },
     { to: '/contact', text: 'Contact' },
-    { to: '/gallery', text: 'Gallery' }
+    { to: '/gallery', text: 'Gallery' } // Add Gallery link
   ];
 
   const academicsLinks = [
     { to: '/notes', text: 'Notes' },
-    { to: '/research', text: 'Research Papers' }
+    { to: '/research', text: 'Research Papers' } // Add dropdown links for Academics
   ];
 
   const baseClasses = "text-primary hover:text-accent transition-colors duration-200";
@@ -75,26 +76,27 @@ const NavLinks = ({ mobile }) => {
           {text}
         </Link>
       ))}
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => setIsAcademicsOpen(true)}
+        onMouseLeave={() => setIsAcademicsOpen(false)}
+      >
         <button
-          onClick={() => setIsAcademicsOpen(!isAcademicsOpen)}
           className={`${baseClasses} ${mobile ? mobileClasses : desktopClasses}`}
         >
           Academics
         </button>
-        {isAcademicsOpen && (
-          <div className="absolute bg-secondary mt-2 shadow-lg rounded-md">
-            {academicsLinks.map(({ to, text }) => (
-              <Link
-                key={to}
-                to={to}
-                className="block px-4 py-2 text-sm font-medium text-primary hover:text-accent transition-colors duration-200"
-              >
-                {text}
-              </Link>
-            ))}
-          </div>
-        )}
+        <div className={`absolute mt-2 rounded-md dropdown-content ${isAcademicsOpen ? '' : 'hidden'}`}>
+          {academicsLinks.map(({ to, text }) => (
+            <Link
+              key={to}
+              to={to}
+              className="block px-4 py-2 text-sm font-medium text-primary hover:text-accent transition-colors duration-200"
+            >
+              {text}
+            </Link>
+          ))}
+        </div>
       </div>
     </>
   );
