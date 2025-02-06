@@ -45,26 +45,59 @@ const Navbar = () => {
 };
 
 const NavLinks = ({ mobile }) => {
+  const [isAcademicsOpen, setIsAcademicsOpen] = useState(false);
+
   const links = [
     { to: '/', text: 'Home' },
     { to: '/about', text: 'About' },
     { to: '/committee', text: 'Committee' },
-    { to: '/contact', text: 'Contact' }
+    { to: '/contact', text: 'Contact' },
+    { to: '/gallery', text: 'Gallery' }
+  ];
+
+  const academicsLinks = [
+    { to: '/notes', text: 'Notes' },
+    { to: '/research', text: 'Research Papers' }
   ];
 
   const baseClasses = "text-primary hover:text-accent transition-colors duration-200";
   const mobileClasses = "block py-2 text-base font-medium";
   const desktopClasses = "text-sm font-medium";
 
-  return links.map(({ to, text }) => (
-    <Link
-      key={to}
-      to={to}
-      className={`${baseClasses} ${mobile ? mobileClasses : desktopClasses}`}
-    >
-      {text}
-    </Link>
-  ));
+  return (
+    <>
+      {links.map(({ to, text }) => (
+        <Link
+          key={to}
+          to={to}
+          className={`${baseClasses} ${mobile ? mobileClasses : desktopClasses}`}
+        >
+          {text}
+        </Link>
+      ))}
+      <div className="relative">
+        <button
+          onClick={() => setIsAcademicsOpen(!isAcademicsOpen)}
+          className={`${baseClasses} ${mobile ? mobileClasses : desktopClasses}`}
+        >
+          Academics
+        </button>
+        {isAcademicsOpen && (
+          <div className="absolute bg-secondary mt-2 shadow-lg rounded-md">
+            {academicsLinks.map(({ to, text }) => (
+              <Link
+                key={to}
+                to={to}
+                className="block px-4 py-2 text-sm font-medium text-primary hover:text-accent transition-colors duration-200"
+              >
+                {text}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
 };
 
 export default Navbar;
