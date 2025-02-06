@@ -32,25 +32,25 @@ const committeeMembers = [
     name: "Samarth Shenavi",
     position: "President",
     department: "Third Year Electrical",
-    image: "https://photos.google.com/album/AF1QipP2SsuA8eHWRB52BqJIMgYbP2nkW5IenkE78ihz/photo/AF1QipPI2eTCzZkucjaXcTf12pU3fGQdOuYjiW-rNuPh"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/samarth.jpg"
   },
   {
     name: "Ishwari Jamale",
     position: "Vice President",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/ishwari.jpg"
   },
   {
     name: "Gauri Dange",
     position: "Secretary",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/gavri.jpg"
   },
   {
     name: "Swapnil Teli",
     position: "Finance Head",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/swapnil.jpg"
   },
   {
     name: "Aryan Bingi",
@@ -62,25 +62,25 @@ const committeeMembers = [
     name: "Prasad Munawali",
     position: "Technical Head",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/prasad.jpg"
   },
   {
     name: "Shreyas Patil",
     position: "Event Head(Extra-Curriculam)",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1463453091185-61582044d556"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/shreyas.jpg"
   },
   {
     name: "Prathamesh Kulkarni",
     position: "Event Head(Sports)",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1557555187-23d685287bc3"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/prathamesh.jpg"
   },
   {
     name: "Sayali Jadhav",
     position: "Publicity Head",
     department: "Third Year Electrical",
-    image: "https://images.unsplash.com/photo-1500048993953-d23a436266cf"
+    image: "https://github.com/Sarthaksk26/eesa-website/blob/f7d9c7bcf32ae63331991c1642a73f43d80e6832/public/assets/sayali.jpg"
   }
 ];
   
