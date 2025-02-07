@@ -3,7 +3,7 @@ import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
+    localStorage.getItem("theme") || "dark" // Default to dark mode
   );
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const ThemeToggle = () => {
       className="p-2 rounded-lg bg-accent hover:opacity-90 text-white transition-opacity"
       aria-label="Toggle theme"
     >
-      {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+      {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
     </button>
   );
 };
