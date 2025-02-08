@@ -102,7 +102,7 @@ const Navbar = () => {
               Academics
             </button>
             {isAcademicsOpen && (
-              <div className="mt-2 w-48 rounded-md bg-white dark:bg-gray-800 backdrop-blur-lg shadow-lg">
+              <div className="mt-2 w-48 rounded-md bg-secondary dark:bg-gray-800 backdrop-blur-lg shadow-lg">
                 {academicsLinks.map(({ to, text }) => (
                   <Link
                     key={to}
