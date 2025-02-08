@@ -5,12 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-  const closeDropdown = () => setIsDropdownOpen(false);
+  const [isAcademicsOpen, setIsAcademicsOpen] = useState(false);
 
   const links = [
     { to: "/", text: "Home" },
@@ -25,14 +20,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-secondary dark:bg-gray-900 shadow-md transition-colors duration-300">
+    <nav className="bg-[var(--secondary)] dark:bg-gray-900 shadow-md transition-colors duration-300">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <Link to="/" className="text-xl font-bold text-primary dark:text-white">
           EESA
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center space-x-6">
           {links.map(({ to, text }) => (
             <Link
@@ -43,25 +38,22 @@ const Navbar = () => {
               {text}
             </Link>
           ))}
-
-          {/* Academics Dropdown */}
+          {/* Dropdown for Academics */}
           <div className="relative">
             <button
-              onClick={toggleDropdown}
+              onClick={() => setIsAcademicsOpen(!isAcademicsOpen)}
               className="text-primary hover:text-accent transition-colors duration-200 dark:text-white dark:hover:text-gray-400 cursor-pointer"
-              aria-expanded={isDropdownOpen}
             >
               Academics
             </button>
 
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
+            {isAcademicsOpen && (
               <div className="absolute left-0 mt-2 w-48 rounded-md bg-secondary dark:bg-gray-900 backdrop-blur-lg shadow-lg transition-opacity duration-300">
                 {academicsLinks.map(({ to, text }) => (
                   <Link
                     key={to}
                     to={to}
-                    onClick={closeDropdown} // Close dropdown when clicked
+                    onClick={() => setIsAcademicsOpen(false)}
                     className="block px-4 py-2 text-sm font-medium text-primary hover:text-accent transition-colors duration-200 dark:text-white dark:hover:text-gray-400"
                   >
                     {text}
@@ -71,15 +63,14 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Theme Toggle */}
+          {/* Theme Toggle Button */}
           <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-primary dark:text-white focus:outline-none"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
@@ -87,8 +78,8 @@ const Navbar = () => {
 
       {/* Mobile Nav Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-secondary dark:bg-gray-900 shadow-md transition-transform duration-300 ${
-          isMenuOpen ? "translate-y-0" : "-translate-y-full"
+        className={`fixed top-16 left-0 w-full bg-secondary dark:bg-gray-900 shadow-md transition-transform duration-300 ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col items-center space-y-4 p-4">
@@ -96,30 +87,31 @@ const Navbar = () => {
             <Link
               key={to}
               to={to}
-              onClick={closeMenu}
               className="text-primary hover:text-accent transition-colors duration-200 dark:text-white dark:hover:text-gray-400"
+              onClick={() => setIsMenuOpen(false)}
             >
               {text}
             </Link>
           ))}
-
-          {/* Mobile Academics Dropdown */}
+          {/* Mobile Dropdown for Academics */}
           <div>
             <button
               className="text-primary hover:text-accent transition-colors duration-200 dark:text-white dark:hover:text-gray-400"
-              onClick={toggleDropdown}
-              aria-expanded={isDropdownOpen}
+              onClick={() => setIsAcademicsOpen(!isAcademicsOpen)}
             >
               Academics
             </button>
-            {isDropdownOpen && (
-              <div className="mt-2 w-48 rounded-md bg-secondary dark:bg-gray-900 backdrop-blur-lg shadow-lg">
+            {isAcademicsOpen && (
+              <div className="mt-2 w-48 rounded-md bg-white dark:bg-gray-800 backdrop-blur-lg shadow-lg">
                 {academicsLinks.map(({ to, text }) => (
                   <Link
                     key={to}
                     to={to}
-                    onClick={closeMenu} // Close entire menu on mobile when clicked
                     className="block px-4 py-2 text-sm font-medium text-primary hover:text-accent transition-colors duration-200 dark:text-white dark:hover:text-gray-400"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsAcademicsOpen(false);
+                    }}
                   >
                     {text}
                   </Link>
@@ -128,7 +120,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Theme Toggle */}
+          {/* Theme Toggle Button */}
           <ThemeToggle />
         </div>
       </div>
