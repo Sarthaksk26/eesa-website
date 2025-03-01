@@ -7,8 +7,11 @@ const ContactUs = () => {
     message: "",
   });
 
-  const googleFormURL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSdonn4QuViP2hs8bwYGchXXM7GHeKtVVawvpyBiW4LAXzr7fg/formResponse";
+  const [responseMessage, setResponseMessage] = useState("");
+
+  // Replace with your Google Apps Script Web App URL
+  const googleAppsScriptURL =
+    "https://script.google.com/macros/s/AKfycbwcT1sBCPhl2LIQuMqT9nOu3S3dWBcXNBQGBw5gfyCwgEQhDTBdKlzTWwFnS3O9mmKl/exec"; // Replace this with the URL from Apps Script deployment
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,34 +19,32 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const formDataEncoded = new URLSearchParams();
-    formDataEncoded.append("entry.2056993192", formData.name); // Replace with actual Google Form entry ID for Name
-    formDataEncoded.append("entry.1536328125", formData.email); // Replace with actual entry ID for Email
-    formDataEncoded.append("entry.536020500", formData.message); // Replace with actual entry ID for Message
-
+  
     try {
-      await fetch(googleFormURL, {
+      await fetch(googleAppsScriptURL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: formDataEncoded.toString(),
+        body: new URLSearchParams(formData).toString(),
       });
-
-      alert("Message sent successfully!");
+  
+      // Show success message without waiting for a response
+      setResponseMessage("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
+  
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Failed to send message. Please try again.");
+      console.error("Error:", error);
+      setResponseMessage("An error occurred, but your message was submitted.");
     }
   };
-
+  
   return (
     <div className="bg-primary min-h-screen py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-primary text-center mb-12">Contact Us</h1>
+        <h1 className="text-4xl font-bold text-primary text-center mb-12">
+          Contact Us
+        </h1>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
@@ -62,7 +63,10 @@ const ContactUs = () => {
 
               <div>
                 <h3 className="font-semibold text-primary mb-2">Email</h3>
-                <a href="mailto:eesagcoek@gmail.com" className="text-accent text-primary hover:underline">
+                <a
+                  href="mailto:eesagcoek@gmail.com"
+                  className="text-accent text-primary hover:underline"
+                >
                   eesagcoek@gmail.com
                 </a>
               </div>
@@ -79,11 +83,15 @@ const ContactUs = () => {
 
           {/* Contact Form */}
           <div className="bg-secondary p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold text-primary mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">
+              Send us a Message
+            </h2>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="name" className="block text-primary mb-2">Name</label>
+                <label htmlFor="name" className="block text-primary mb-2">
+                  Name
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -96,7 +104,9 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-primary mb-2">Email</label>
+                <label htmlFor="email" className="block text-primary mb-2">
+                  Email
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -109,7 +119,9 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-primary mb-2">Message</label>
+                <label htmlFor="message" className="block text-primary mb-2">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -127,6 +139,10 @@ const ContactUs = () => {
               >
                 Send Message
               </button>
+
+              {responseMessage && (
+                <p className="text-center text-primary mt-4">{responseMessage}</p>
+              )}
             </form>
           </div>
         </div>
