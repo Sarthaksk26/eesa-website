@@ -13,10 +13,12 @@ const CommitteeMembers = () => {
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="w-full h-64 object-cover rounded-lg mb-4"
+                  className={`w-full h-64 rounded-lg mb-4 object-cover ${
+                    member.name === "Aryan Bingi" ? "h-56 object-top" : ""
+                  }`}
                 />
                 <h2 className="text-xl font-bold text-primary">{member.name}</h2>
-                <p className="text-accent font-medium">{member.position}</p>
+                <p className="text-accent font-medium text-primary">{member.position}</p>
               </div>
               <p className="text-secondary">{member.department}</p>
             </div>

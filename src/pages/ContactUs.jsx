@@ -1,14 +1,55 @@
+import { useState } from "react";
+
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const googleFormURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdonn4QuViP2hs8bwYGchXXM7GHeKtVVawvpyBiW4LAXzr7fg/formResponse";
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formDataEncoded = new URLSearchParams();
+    formDataEncoded.append("entry.2056993192", formData.name); // Replace with actual Google Form entry ID for Name
+    formDataEncoded.append("entry.1536328125", formData.email); // Replace with actual entry ID for Email
+    formDataEncoded.append("entry.536020500", formData.message); // Replace with actual entry ID for Message
+
+    try {
+      await fetch(googleFormURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formDataEncoded.toString(),
+      });
+
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <div className="bg-primary min-h-screen py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-primary text-center mb-12">Contact Us</h1>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
           <div className="bg-secondary p-8 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-primary mb-6">Get in Touch</h2>
-            
+
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-primary mb-2">Location</h3>
@@ -18,14 +59,14 @@ const ContactUs = () => {
                   Karad, Maharashtra
                 </p>
               </div>
-              
+
               <div>
                 <h3 className="font-semibold text-primary mb-2">Email</h3>
-                <a href="mailto:eesagcoek@gmail.com" className="text-accent hover:underline">
+                <a href="mailto:eesagcoek@gmail.com" className="text-accent text-primary hover:underline">
                   eesagcoek@gmail.com
                 </a>
               </div>
-              
+
               <div>
                 <h3 className="font-semibold text-primary mb-2">Phone</h3>
                 <p className="text-secondary">
@@ -39,35 +80,47 @@ const ContactUs = () => {
           {/* Contact Form */}
           <div className="bg-secondary p-8 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-primary mb-6">Send us a Message</h2>
-            
-            <form className="space-y-4">
+
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-primary mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:border-accent"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 rounded-md border text-primary border-gray-300 focus:outline-none focus:border-accent"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-primary mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:border-accent"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 rounded-md border text-primary border-gray-300 focus:outline-none focus:border-accent"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-primary mb-2">Message</label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="4"
-                  className="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:border-accent"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 text-primary rounded-md border border-gray-300 focus:outline-none focus:border-accent"
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
                 className="w-full bg-accent text-white py-2 px-4 rounded-md hover:opacity-90 transition-opacity"
