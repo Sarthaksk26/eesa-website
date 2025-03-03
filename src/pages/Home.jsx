@@ -3,7 +3,18 @@ const Home = () => {
     <div className="min-h-screen bg-primary">
       {/* Notice Bar */}
       <div className="bg-red-600 text-white text-center py-2 font-semibold">
-        ⚡ Important Notice: EESA Event on March 10th! Register Now! ⚡
+      📢 Important Notice:  
+
+      🚀 **Upcoming EESA Events!**  
+
+      📍 **LinkedIn & Resume Building Workshop** – *March 5th*  
+      🔹 Learn how to craft a strong resume and optimize your LinkedIn profile for better opportunities!  
+
+      📍 **Doubt-Solving Session** – *March 6th*  
+      🔹 Get your queries resolved on core Electrical Engineering concepts and career guidance!  
+
+      📅 Save the dates and stay ahead! 🔥  
+
       </div>
 
       {/* Hero Section */}
