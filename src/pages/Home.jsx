@@ -1,10 +1,15 @@
 const Home = () => {
   return (
     <div className="min-h-screen bg-primary">
+      {/* Notice Bar */}
+      <div className="bg-red-600 text-white text-center py-2 font-semibold">
+        ⚡ Important Notice: EESA Event on March 10th! Register Now! ⚡
+      </div>
+
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          { <div className="flex justify-center space-x-8 mb-8 bg-secondary p-12 rounded-4xl border-2">
+          <div className="flex justify-center space-x-8 mb-8 bg-secondary p-12 rounded-4xl border-2">
             <img 
               src="/assets/eesa-logo.png" 
               alt="EESA Logo" 
@@ -15,9 +20,8 @@ const Home = () => {
               alt="College Logo"
               className="w-32 h-32 md:w-40 md:h-40 object-contain" 
             />
-          </div> }
-          
-          
+          </div>
+
           <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">
             EESA Committee
           </h1>
@@ -38,37 +42,37 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <img 
-              src="\assets\IMG_1148.JPG"
+              src="/assets/IMG_1148.JPG"
               alt="Event 1" 
               className="w-full h-52 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
             />
             <img 
-              src="\assets\IMG_1320.JPG"
+              src="/assets/IMG_1320.JPG"
               alt="Event 2" 
               className="w-full h-52 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
             />
             <img 
-              src="\assets\IMG_2836.JPG"
+              src="/assets/IMG_2836.JPG"
               alt="Event 3" 
               className="w-full h-52 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
             />
           </div>
-              {/* Google Photos Link */}
-    <div className="mt-8 text-center">
-      <a
-        href="https://drive.google.com/drive/folders/1-tWFiEPB7dslu6rTqPntfdeyBKTKToEu?usp=drive_link" // Replace with your actual Google Photos album link
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-lg font-semibold text-white bg-secondary px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-80 transition"
-      >
-        View More on Google Drive
-      </a>
-    </div>
+
+          {/* Google Photos Link */}
+          <div className="mt-8 text-center">
+            <a
+              href="https://drive.google.com/drive/folders/1-tWFiEPB7dslu6rTqPntfdeyBKTKToEu?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-semibold text-white bg-secondary px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-80 transition"
+            >
+              View More on Google Drive
+            </a>
+          </div>
         </div>
       </section>
     </div>
   );
 };
-
 
 export default Home;

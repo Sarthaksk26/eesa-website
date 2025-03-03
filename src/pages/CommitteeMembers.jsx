@@ -56,7 +56,7 @@ const committeeMembers = [
   },
   {
     name: "Aryan Bingi",
-    position: "IIIE Student Chapter Head",
+    position: "IEEE Student Chapter Head",
     department: "Third Year Electrical",
     image: "/assets/aryan.jpg"
   },
