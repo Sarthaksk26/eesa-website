@@ -38,21 +38,32 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <img 
-              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4"
+              src="\assets\IMG_1148.JPG"
               alt="Event 1" 
               className="w-full h-52 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
             />
             <img 
-              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94"
+              src="\assets\IMG_1320.JPG"
               alt="Event 2" 
               className="w-full h-52 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
             />
             <img 
-              src="https://images.unsplash.com/photo-1544531585-9847b68c8c86"
+              src="\assets\IMG_2836.JPG"
               alt="Event 3" 
               className="w-full h-52 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
             />
           </div>
+              {/* Google Photos Link */}
+    <div className="mt-8 text-center">
+      <a
+        href="https://drive.google.com/drive/folders/1-tWFiEPB7dslu6rTqPntfdeyBKTKToEu?usp=drive_link" // Replace with your actual Google Photos album link
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-lg font-semibold text-white bg-secondary px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-80 transition"
+      >
+        View More on Google Drive
+      </a>
+    </div>
         </div>
       </section>
     </div>
