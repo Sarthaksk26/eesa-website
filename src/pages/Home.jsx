@@ -1,12 +1,12 @@
 const Home = () => {
   return (
     <div className="min-h-screen bg-primary">
-      {/* Notice Bar */}
+      {/* Notice Bar
       <div className="bg-red-600 text-white text-center py-2 font-semibold">
       📢 <strong>Upcoming EESA Events!</strong> <br />
       📍 <strong>March 5:</strong> LinkedIn & Resume Building Workshop <br />
       ⚡ Enhance your career & clear your doubts! Stay tuned!
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
