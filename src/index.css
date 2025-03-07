@@ -2,11 +2,12 @@
 
 :root {
   /* Light Mode */
-  --primary: #F8FAFC;      /* Soft bluish-white for a clean background */
-  --secondary: #E2E8F0;    /* Light gray for subtle contrast */
-  --accent: #3B82F6;       /* Bright blue for highlights and buttons */
-  --text-primary: #1E293B; /* Dark blue-gray for readability */
-  --text-secondary: #64748B; /* Medium gray for supporting text */
+  --primary: #F9FAFB;      /* Soft off-white for a clean, modern look */
+  --secondary: #D1E3FF;    /* Soft sky blue for a subtle background contrast */
+  --accent: #2563EB;       /* Deep royal blue for buttons & highlights */
+  --text-primary: #1E293B; /* Dark navy for sharp text */
+  --text-secondary: #64748B; /* Neutral gray for less prominent text */
+  --highlight: #FFB547;    /* Warm golden-orange for vibrant accents */
 }
 
 .dark {
