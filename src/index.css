@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  /* Light theme defaults */
-  --primary: #FEFBD8;
-  --secondary: #a5c2ca;
-  --accent: #EECEB9;
-  --text-primary: #1E293B;
-  --text-secondary: #64748B;
+  /* Light Mode */
+  --primary: #F8FAFC;      /* Soft bluish-white for a clean background */
+  --secondary: #E2E8F0;    /* Light gray for subtle contrast */
+  --accent: #3B82F6;       /* Bright blue for highlights and buttons */
+  --text-primary: #1E293B; /* Dark blue-gray for readability */
+  --text-secondary: #64748B; /* Medium gray for supporting text */
 }
 
 .dark {
