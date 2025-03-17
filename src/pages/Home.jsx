@@ -66,7 +66,7 @@ const Home = () => {
               href="https://drive.google.com/drive/folders/1-tWFiEPB7dslu6rTqPntfdeyBKTKToEu?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-semibold text-white bg-secondary px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-80 transition"
+              className="text-lg font-semibold text-black bg-secondary px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-80 transition"
             >
               View More on Google Drive
             </a>
