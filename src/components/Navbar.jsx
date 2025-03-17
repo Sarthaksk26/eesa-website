@@ -121,34 +121,42 @@ const Navbar = () => {
               className="text-primary dark:text-white hover:text-accent dark:hover:text-gray-400 transition-colors duration-200 cursor-pointer relative group flex items-center"
             >
               Academics
-              <svg 
-                className={`ml-1 w-4 h-4 transition-transform duration-300 ${isAcademicsOpen ? 'rotate-180' : ''}`} 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 20 20" 
+              <svg
+                className={`ml-1 w-4 h-4 transition-transform duration-300 ${
+                  isAcademicsOpen ? "rotate-180" : ""
+                }`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
                 fill="currentColor"
               >
-                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
               </svg>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
             </button>
 
+            {/* Dropdown List */}
             {isAcademicsOpen && (
-              <div 
+              <div
                 key={`desktop-dropdown-${dropdownKey}`}
-                className="absolute left-0 mt-2 w-48 rounded-md dark:bg-gray-800 shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden"
+                className="absolute left-0 mt-2 w-48 rounded-lg bg-white dark:bg-gray-800 shadow-lg border border-gray-300 dark:border-gray-700 overflow-hidden transition-all duration-300"
               >
                 {academicsLinks.map(({ to, text }) => (
-                  <button
+                  <Link
                     key={to}
-                    onClick={handleComingSoon}
-                    className="block px-4 py-2 text-sm font-medium text-primary dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer w-full text-left"
+                    to={to}
+                    className="block px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
                   >
                     {text}
-                  </button>
+                  </Link>
                 ))}
               </div>
             )}
           </div>
+
 
           {/* Theme Toggle Button */}
           <ThemeToggle onThemeChange={handleThemeChange} currentTheme={currentTheme} />
