@@ -5,12 +5,13 @@
 }
 
 :root {
-  /* Light theme defaults */
-  --primary: #FEFBD8;
-  --secondary: #a5c2ca;
-  --accent: #EECEB9;
-  --text-primary: #1E293B;
-  --text-secondary: #64748B;
+  /* Light Mode */
+  --primary: #F9FAFB;      /* Soft off-white for a clean, modern look */
+  --secondary: #D1E3FF;    /* Soft sky blue for a subtle background contrast */
+  --accent: #2563EB;       /* Deep royal blue for buttons & highlights */
+  --text-primary: #1E293B; /* Dark navy for sharp text */
+  --text-secondary: #64748B; /* Neutral gray for less prominent text */
+  --highlight: #FFB547;    /* Warm golden-orange for vibrant accents */
 }
 
 .dark {

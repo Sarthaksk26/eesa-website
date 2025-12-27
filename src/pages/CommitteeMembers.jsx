@@ -1,4 +1,5 @@
-import committeeMembers from "../data/committeeMembers";
+import committeeMembersdata from "../data/committeeMembers.js";
+
 
 const CommitteeMembers = () => {
   return (
@@ -9,7 +10,7 @@ const CommitteeMembers = () => {
         </h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {committeeMembers.map((member, index) => (
+          {committeeMembersdata.map((member, index) => (
             <div 
               key={index} 
               className="bg-secondary p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 opacity-0 animate-cardFadeIn group"

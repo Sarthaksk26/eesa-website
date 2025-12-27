@@ -1,10 +1,7 @@
 import { useState } from "react";
-
 import { FaBars, FaTimes } from "react-icons/fa";
-import ThemeToggle from "./ThemeToggle";
-import { navLinks } from "../data/navLinks";
-
-
+import {navLinks} from "../data/navLinks.js"
+import ThemeToggle from "../components/ThemeToggle.jsx";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -28,7 +25,7 @@ const Navbar = () => {
               {label}
             </a>
           ))}
-           <ThemeToggle />
+          <ThemeToggle></ThemeToggle>
         </div>
 
         {/* Mobile */}
@@ -72,7 +69,7 @@ const Navbar = () => {
               {label}
             </a>
           ))}
-          <ThemeToggle />
+        <ThemeToggle></ThemeToggle>
         </div>
       </div>
 

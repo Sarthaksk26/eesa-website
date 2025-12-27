@@ -1,4 +1,4 @@
-const committeeMembers = [
+const committeeMembersdata = [
   {
     name: "Samarth Shenavi",
     position: "President",
@@ -55,4 +55,4 @@ const committeeMembers = [
   }
 ];
   
-  export default committeeMembers;
+  export default committeeMembersdata;
