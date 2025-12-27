@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  transition: background-color 0.2s, color 0.2s;
+}
+
 :root {
   /* Light theme defaults */
   --primary: #FEFBD8;
