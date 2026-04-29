@@ -1,49 +1,46 @@
-# EESA — Electrical Engineering Students Association (GCEK)
+# ⚡ EESA — Electrical Engineering Students Association (GCEK)
 
-Official web platform for the Electrical Engineering Students Association at **Government College of Engineering, Karad**. Built with modern technologies to showcase committee initiatives, events, and student achievements.
+Official web platform for the **Electrical Engineering Students Association** at **Government College of Engineering, Karad**. A modern, high-performance web application designed to showcase committee initiatives, technical events, and student excellence.
 
-![EESA Banner](/assets/eesa-logo.png)
+🔗 **Live Demo**: [eesa-gcek.onrender.com](https://eesa-gcek.onrender.com/)
 
-## 🚀 Key Features
+---
 
-- **Dynamic Events Timeline**: Interactive chronological display of past and upcoming events with category filtering.
-- **Masonry Gallery**: High-performance image gallery with lightbox support and category sorting.
-- **Achievements Showcase**: Highlighted awards and accomplishments of students across college, state, and national levels.
-- **Modern UI/UX**: Professional dark theme with glassmorphism, smooth scroll-triggered animations (Intersection Observer), and responsive design.
-- **Performance Optimized**: Route-level code splitting (`React.lazy`), image lazy loading with skeleton fallbacks, and optimized asset delivery.
-- **SEO & Accessibility**: Semantic HTML5, structured data (JSON-LD), optimized meta tags, and full keyboard accessibility.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-## 🛠️ Tech Stack
+## ✨ Key Features
 
-- **Frontend**: React 18 (Vite)
-- **Styling**: Tailwind CSS v4, CSS Variables, Custom Keyframe Animations
+- **⚡ Electrical Theme**: Immersive UI with pulsing circuit traces, flowing current animations, and neon glowing typography.
+- **📅 Events Timeline**: Interactive chronological display of technical symposiums and cultural events with category filtering.
+- **🖼️ Masonry Gallery**: High-performance image gallery with smooth transitions and a custom-built lightbox.
+- **🏆 Achievements**: Showcasing student wins across National, State, and College levels.
+- **📱 Responsive & Accessible**: Fully optimized for all devices with semantic HTML and keyboard navigation.
+- **🚀 Performance Optimized**: Route-level code-splitting, lazy loading, and optimized build chunks.
+
+## 🛠️ Technology Stack
+
+- **Core**: React 18 (Vite)
+- **Styling**: Tailwind CSS v4, Custom CSS Animations, Glassmorphism
 - **Routing**: React Router v7
 - **Icons**: Lucide React
-- **Performance**: Intersection Observer API, React Suspense, Dynamic Import
+- **Backgrounds**: SVG Circuit Patterns & Radial Gradients
 
 ## 📂 Project Structure
 
 ```text
 src/
-├── components/        # Reusable UI components & Layout
-│   ├── ui/           # Atom-level shared components (Card, Counter, etc.)
-│   └── Lightbox.jsx  # Fullscreen image viewer
-├── context/           # Global state (Theme, Auth)
-├── data/              # Centralized data files (Events, Team, Achievements)
+├── components/        # UI components (Cards, Headings, Lightbox)
+├── data/              # Centralized site content & metadata
 ├── hooks/             # Custom hooks (Scroll animations)
 ├── pages/             # Page components (Home, Events, Gallery, etc.)
 ├── styles/            # Global styles and central animation system
-└── App.jsx            # Main entry point with routing
+└── App.jsx            # Application entry & routing logic
 ```
 
-## 📈 Optimization Highlights
-
-- **Scroll-Triggered Animations**: Implemented a custom `useScrollAnimation` hook using the `Intersection Observer API` to trigger animations only when elements enter the viewport, significantly reducing initial CPU load.
-- **Code Splitting**: Utilized route-level lazy loading to reduce the initial bundle size, ensuring faster First Contentful Paint (FCP).
-- **Image Optimization**: Implemented an `ImageWithFallback` component that handles lazy loading, skeleton states, and error fallbacks gracefully.
-- **UX Polish**: Added scroll restoration and a floating "scroll-to-top" feature for seamless navigation in long-form content like the timeline and gallery.
-
-## 💻 Installation & Setup
+## 💻 Installation
 
 1. **Clone the repository**
    ```bash
@@ -55,20 +52,15 @@ src/
    npm install
    ```
 
-3. **Run development server**
+3. **Start development server**
    ```bash
    npm run dev
    ```
 
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-## 📝 License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-© 2025 EESA GCEK. Developed by the EESA Tech Team.
+© 2025 EESA GCEK. Developed with ❤️ by the EESA Tech Team.
