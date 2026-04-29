@@ -1,40 +1,104 @@
 @import "tailwindcss";
 
-* {
-  transition: background-color 0.2s, color 0.2s;
-}
-
 :root {
-  /* Light Mode */
-  --primary: #F9FAFB;      /* Soft off-white for a clean, modern look */
-  --secondary: #D1E3FF;    /* Soft sky blue for a subtle background contrast */
-  --accent: #2563EB;       /* Deep royal blue for buttons & highlights */
-  --text-primary: #1E293B; /* Dark navy for sharp text */
-  --text-secondary: #64748B; /* Neutral gray for less prominent text */
-  --highlight: #FFB547;    /* Warm golden-orange for vibrant accents */
-}
-
-.dark {
   --primary: #0F172A;
   --secondary: #1E293B;
   --accent: #3B82F6;
+  --accent-hover: #2563EB;
   --text-primary: #F8FAFC;
-  --text-secondary: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --highlight: #FFB547;
+  --surface: #1a2332;
+  --border: #334155;
+  --success: #22C55E;
+  --error: #EF4444;
+  --gradient-start: #3B82F6;
+  --gradient-end: #8B5CF6;
 }
 
 /* Apply CSS variables to classes */
 .bg-primary { background-color: var(--primary); }
 .bg-secondary { background-color: var(--secondary); }
 .bg-accent { background-color: var(--accent); }
+.bg-surface { background-color: var(--surface); }
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
+.text-accent { color: var(--accent); }
 
-/* Add any additional custom styles here */
+/* Scrollbar */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.05) 1px, transparent 0);
+  background-size: 40px 40px; /* Subtle grid pattern */
+}
+
+/* Electrical Flow Animation */
+@keyframes flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.current-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.current-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: flow 3s linear infinite;
+}
+
+/* Neon Pulse */
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent); }
+  50% { text-shadow: 0 0 15px var(--accent), 0 0 20px var(--accent), 0 0 25px var(--accent); }
+}
+
+.text-neon {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes pulseNode {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+.circuit-node {
+  transform-origin: center;
+  animation: pulseNode 3s ease-in-out infinite;
+}
+
+/* Circuit Line Background (SVG) */
+.circuit-bg {
+  mask-image: linear-gradient(to bottom, black, transparent);
+  opacity: 0.1;
+  pointer-events: none;
 }
