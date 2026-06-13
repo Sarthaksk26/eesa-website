@@ -7,7 +7,11 @@ import committeeMembers from '../data/committeeMembers';
 import { Linkedin, Mail } from 'lucide-react';
 
 const CommitteeMembers = () => {
+  const years = Object.keys(committeeMembers);
+  const [selectedYear, setSelectedYear] = useState(years[0] || '2026-27');
   const [hoveredId, setHoveredId] = useState(null);
+
+  const activeMembers = committeeMembers[selectedYear] || [];
 
   return (
     <div className="bg-primary min-h-screen py-16 px-4">
@@ -22,8 +26,29 @@ const CommitteeMembers = () => {
           subtitle="The passionate individuals driving EESA forward"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {committeeMembers.map((member, index) => (
+        {/* Academic Year Selector */}
+        {years.length > 1 && (
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex p-1.5 bg-secondary/80 backdrop-blur-md border border-white/5 rounded-2xl shadow-inner relative z-10">
+              {years.map((year) => (
+                <button
+                  key={year}
+                  onClick={() => setSelectedYear(year)}
+                  className={`relative px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                    selectedYear === year
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 font-bold scale-105'
+                      : 'text-secondary hover:text-primary hover:bg-white/5'
+                  }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div key={selectedYear} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {activeMembers.map((member, index) => (
             <Card key={member.id} delay={index * 100}>
               <div
                 className="relative group"
